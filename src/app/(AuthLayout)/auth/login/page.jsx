@@ -1,10 +1,9 @@
-import RegisterForm from "@/Components/Auth/RegisterForm";
-import { Button } from "@heroui/react";
-import { Icon } from "@iconify/react";
+import LoginForm from "@/Components/Auth/LoginForm";
+
 import { Shell, ShieldCheck, Zap } from "lucide-react";
 import Link from "next/link";
 
-const RegisterPage = () => {
+const LoginPage = () => {
   return (
     <div className="min-h-screen  bg-background">
       <div className="w-full min-h-screen  grid md:grid-cols-2 ">
@@ -19,12 +18,13 @@ const RegisterPage = () => {
               </h1>
 
               <h3 className="text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">
-                Precision-grade recruitment for modern leaders.
+                Streamlining Every Step of Hiring
               </h3>
 
               <p className="text-sm mr-6 lg:mr-0 text-white/80 leading-relaxed max-w-lg">
-                The elite ecosystem where visionaries find their next challenge
-                and teams find their next breakthrough.
+                Experience the next generation of recruitment. From sourcing to
+                onboarding, manage your entire talent pipeline with a
+                precision-engineered dashboard.
               </p>
             </div>
 
@@ -68,24 +68,24 @@ const RegisterPage = () => {
         <section className="w-full px-6 lg:px-0 flex flex-col my-12  justify-center max-w-md mx-auto">
           <div className="mb-8 space-y-1 text-center sm:text-left ">
             <h3 className="text-3xl font-semibold tracking-tight text-foreground">
-              Create account
+              Sign In
             </h3>
 
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Elevate your professional trajectory today.
+              Enter your credentials to access your dashboard.
             </p>
           </div>
 
-          <RegisterForm />
+          <LoginForm />
 
-          <div className="text-center mt-6 text-sm text-default-600">
+          <div className="text-center mt-6  text-sm text-default-600">
             <p>
-              Already have an account?{" "}
+              New to CareerFlow?
               <Link
-                href="/auth/login"
+                href="/auth/register"
                 className="font-semibold text-primary hover:underline underline-offset-4 transition"
               >
-                Sign In
+                Create Account
               </Link>
             </p>
           </div>
@@ -95,4 +95,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default LoginPage;
