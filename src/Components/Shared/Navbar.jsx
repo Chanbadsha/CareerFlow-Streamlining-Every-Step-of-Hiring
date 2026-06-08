@@ -63,9 +63,10 @@ export default function Navbar() {
           ))}
         </ul>
         <div className="hidden items-center gap-4 md:flex">
-          <Link href="#">Login</Link>
           <ThemeSwitch />
-          <Button>Sign Up</Button>
+          <Link href="/auth/login">Login</Link>
+
+          <Link href="/auth/register">Sign Up</Link>
         </div>
       </header>
       {isMenuOpen && (
