@@ -1,6 +1,7 @@
-import { Geist, Geist_Mono, Inter, Sora } from "next/font/google";
+import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { ThemeProviders } from "@/Provider/ThemeProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,13 +21,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
+      suppressHydrationWarning
       lang="en"
       className={`${inter.variable} ${sora.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Analytics />
-        {children}
-        <h1>Hello</h1>
+        <ThemeProviders> {children}</ThemeProviders>
       </body>
     </html>
   );

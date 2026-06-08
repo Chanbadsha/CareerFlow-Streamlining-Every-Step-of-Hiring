@@ -1,33 +1,66 @@
 @import "tailwindcss";
 @import "@heroui/styles";
 
+/* LIGHT THEME */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --btn-primary: #4f46e5;
-  --btn-secondary: #6366f1;
-  --text-primary: #111827;
+  --foreground: #1c313e;
+  --background: #f0f0f0;
+  --surface: #ffffff;
+  --muted: #edeff5;
+  --border: #d9dce5;
+
+  --text: #1c313e;
+  --text-secondary: #5b6b7a;
+  --text-muted: #98a2b3;
+
+  --primary: #3592f9;
+  --secondary: #4adadc;
+  --danger: #fe3c59;
+  --success: #99fe39;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+
+  --color-surface: var(--surface);
+
   --font-inter: var(--font-inter);
   --font-sora: var(--font-sora);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-p {
-  font-family: var(--font-sora), Helvetica, sans-serif;
+/* DARK THEME (IMPORTANT: CLASS BASED) */
+.dark {
+  --foreground: #e6eaf2;
+  --background: #0b0f1a;
+  --surface: #121a2a;
+  --muted: #151c2e;
+  --border: #24324a;
+
+  --text: #e6eaf2;
+  --text-secondary: #a6b0c3;
+  --text-muted: #6b768a;
+
+  --primary: #3592f9;
+  --secondary: #3fe0d0;
+  --danger: #ff4d6d;
+  --success: #7cff6b;
 }
 
+/* BASE STYLES */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
+
+/* REMOVE THIS (IMPORTANT) */
+/* p { font-family: var(--font-sora) } ❌ WRONG GLOBAL RULE */
