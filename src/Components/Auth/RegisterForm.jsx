@@ -1,5 +1,6 @@
 "use client";
 
+import { signUp } from "@/lib/auth-client";
 import {
   Button,
   Input,
@@ -8,6 +9,7 @@ import {
   Radio,
   RadioGroup,
   Checkbox,
+  Spinner,
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { MoveRight, User } from "lucide-react";
@@ -16,6 +18,9 @@ import { useForm, Controller } from "react-hook-form";
 
 const RegisterForm = () => {
   const [isSelected, setIsSelected] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [user, setUser] = useState("");
 
   const {
     register,
@@ -29,8 +34,28 @@ const RegisterForm = () => {
     },
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      setLoading(true);
+      setError("");
+      setUser(null);
+
+      const { data: user, error } = await signUp.email(data);
+
+      if (error) {
+        setError(error.message || "Failed to create account.");
+        return;
+      }
+
+      if (user) {
+        setUser(user);
+      }
+    } catch (error) {
+      console.error(error);
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -193,10 +218,43 @@ const RegisterForm = () => {
           )}
         </TextField>
 
-        {/* SUBMIT */}
-        <Button type="submit" className="w-full">
-          Create Account
-          <MoveRight className="ml-2" />
+        <div>
+          {/* Feedback Message */}
+          {error && (
+            <div className="rounded-lg border border-danger/20 bg-danger/10 px-3 py-2 text-sm text-danger">
+              {error?.message || "Failed to create account. Please try again."}
+            </div>
+          )}
+
+          {user && (
+            <div className="rounded-lg border border-success/20 bg-success/10 px-3 py-2 text-sm text-success">
+              {user?.message ||
+                "Successfully signed in.Please login to continue"}
+            </div>
+          )}
+        </div>
+
+        {/* Submit */}
+        <Button
+          type="submit"
+          className="w-full font-medium"
+          isPending={loading}
+        >
+          {({ isPending }) => (
+            <>
+              {isPending ? (
+                <>
+                  <Spinner color="current" size="sm" />
+                  <span className="ml-2">Creating account...</span>
+                </>
+              ) : (
+                <>
+                  Create Account
+                  <MoveRight className="ml-2 h-4 w-4" />
+                </>
+              )}
+            </>
+          )}
         </Button>
       </form>
 

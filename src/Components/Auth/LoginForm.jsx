@@ -1,5 +1,6 @@
 "use client";
 
+import { signIn } from "@/lib/auth-client";
 import {
   Button,
   Input,
@@ -8,15 +9,19 @@ import {
   Radio,
   RadioGroup,
   Checkbox,
+  Spinner,
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { MoveRight, User } from "lucide-react";
-import { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { redirect } from "next/navigation";
+import { use, useState } from "react";
+import { useForm } from "react-hook-form";
 
 const LoginForm = () => {
   const [isSelected, setIsSelected] = useState(false);
-
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [user, setUser] = useState("");
   const {
     register,
     handleSubmit,
@@ -29,8 +34,21 @@ const LoginForm = () => {
     },
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    setLoading(true);
+    setError("");
+    setUser("");
+    const { data: user, error } = await signIn.email(data);
+    if (error) {
+      setError(error);
+      setLoading(false);
+      return;
+    }
+    if (user) {
+      setUser(user);
+      setLoading(false);
+      // redirect("/");
+    }
   };
 
   return (
@@ -99,10 +117,43 @@ const LoginForm = () => {
           )}
         </TextField>
 
+        <div>
+          {/* Feedback Message */}
+          {error && (
+            <div className="rounded-lg border border-danger/20 bg-danger/10 px-3 py-2 text-sm text-danger">
+              {error?.message || "Failed to sign in. Please try again."}
+            </div>
+          )}
+
+          {user && (
+            <div className="rounded-lg border border-success/20 bg-success/10 px-3 py-2 text-sm text-success">
+              {user?.message || "Successfully signed in."}
+            </div>
+          )}
+        </div>
+
         {/* SUBMIT */}
-        <Button type="submit" className="w-full">
-          Sign In
-          <MoveRight className="ml-2" />
+
+        <Button
+          type="submit"
+          className="w-full h-11 font-medium"
+          isPending={loading}
+        >
+          {({ isPending }) => (
+            <>
+              {isPending ? (
+                <>
+                  <Spinner color="current" size="sm" />
+                  <span className="ml-2">Signing in...</span>
+                </>
+              ) : (
+                <>
+                  Continue
+                  <MoveRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </>
+              )}
+            </>
+          )}
         </Button>
       </form>
 
