@@ -1,8 +1,11 @@
 "use client";
 import { useState } from "react";
-import { Link, Button } from "@heroui/react";
+import { Link, Button, Avatar } from "@heroui/react";
 import NavLink from "@/utils/NavLink";
 import { ThemeSwitch } from "@/utils/ThemeSwitch";
+import { authClient } from "@/lib/auth-client";
+import { LayoutDashboard, LogOut } from "lucide-react";
+import Loading from "@/utils/Loading";
 const navMenu = [
   { path: "/", label: "Home" },
   { path: "/jobs", label: "Browse Jobs" },
@@ -17,6 +20,13 @@ const navMenu = [
 ];
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const { data: session, isPending, error, refetch } = authClient.useSession();
+  if (isPending) {
+    return <Loading></Loading>;
+  }
+  const user = session?.user;
 
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
@@ -64,9 +74,63 @@ export default function Navbar() {
         </ul>
         <div className="hidden items-center gap-4 md:flex">
           <ThemeSwitch />
-          <Link href="/auth/login">Login</Link>
+          {user ? (
+            <>
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setOpen(!open)}
+                  className="rounded-full transition-transform duration-200 hover:scale-105"
+                >
+                  <Avatar className="ring-2 ring-border hover:ring-primary/30 transition-all">
+                    <Avatar.Image
+                      alt="Profile"
+                      src="https://img.heroui.chat/image/avatar?w=400&h=400&u=3"
+                    />
+                    <Avatar.Fallback>SR</Avatar.Fallback>
+                  </Avatar>
+                </button>
 
-          <Link href="/auth/register">Sign Up</Link>
+                {open && (
+                  <ul className="absolute right-0 top-12 z-50 w-52 overflow-hidden rounded-2xl border border-border bg-background/95 backdrop-blur-xl shadow-xl animate-in fade-in zoom-in-95 duration-200">
+                    <li>
+                      <button
+                        type="button"
+                        className="flex w-full items-center gap-3 px-4 py-3 text-sm font-medium transition-colors hover:bg-muted"
+                        onClick={() => {
+                          setValue("userRole", "job-seeker");
+                          setOpen(false);
+                        }}
+                      >
+                        <LayoutDashboard size={16} />
+                        Dashboard
+                      </button>
+                    </li>
+
+                    <li>
+                      <button
+                        type="button"
+                        className="flex w-full items-center gap-3 px-4 py-3 text-sm font-medium transition-colors hover:bg-muted text-danger"
+                        onClick={() => {
+                          setValue("userRole", "recruiter");
+                          setOpen(false);
+                        }}
+                      >
+                        <LogOut size={16} />
+                        Log out
+                      </button>
+                    </li>
+                  </ul>
+                )}
+              </div>
+            </>
+          ) : (
+            <>
+              {" "}
+              <Link href="/auth/login">Login</Link>
+              <Link href="/auth/register">Sign Up</Link>
+            </>
+          )}
         </div>
       </header>
       {isMenuOpen && (

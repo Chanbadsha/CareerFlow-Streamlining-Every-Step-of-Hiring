@@ -13,15 +13,16 @@ import {
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { MoveRight, User } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 
 const RegisterForm = () => {
   const [isSelected, setIsSelected] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [user, setUser] = useState("");
-
+  const [authError, setAuthError] = useState("");
+  const [user, setUser] = useState(null);
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -34,25 +35,27 @@ const RegisterForm = () => {
     },
   });
 
+  const password = watch("password");
+
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      setError("");
+      setAuthError(null);
       setUser(null);
 
       const { data: user, error } = await signUp.email(data);
 
       if (error) {
-        setError(error.message || "Failed to create account.");
+        setAuthError(error || "Failed to create account.");
         return;
       }
 
       if (user) {
         setUser(user);
+
+        router.push("/");
       }
     } catch (error) {
-      console.error(error);
-      setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -176,6 +179,8 @@ const RegisterForm = () => {
             type="password"
             {...register("confirmPassword", {
               required: "Confirm password is required",
+              validate: (value) =>
+                value === password || "Password do not match",
             })}
             placeholder="Confirm password"
           />
@@ -220,16 +225,16 @@ const RegisterForm = () => {
 
         <div>
           {/* Feedback Message */}
-          {error && (
+          {authError && (
             <div className="rounded-lg border border-danger/20 bg-danger/10 px-3 py-2 text-sm text-danger">
-              {error?.message || "Failed to create account. Please try again."}
+              {authError?.message ||
+                "Failed to create account. Please try again."}
             </div>
           )}
 
           {user && (
             <div className="rounded-lg border border-success/20 bg-success/10 px-3 py-2 text-sm text-success">
-              {user?.message ||
-                "Successfully signed in.Please login to continue"}
+              {"Successfully signed in.Please login to continue"}
             </div>
           )}
         </div>

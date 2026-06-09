@@ -6,8 +6,6 @@ import {
   Input,
   Label,
   TextField,
-  Radio,
-  RadioGroup,
   Checkbox,
   Spinner,
 } from "@heroui/react";
@@ -47,7 +45,7 @@ const LoginForm = () => {
     if (user) {
       setUser(user);
       setLoading(false);
-      // redirect("/");
+      redirect("/");
     }
   };
 
