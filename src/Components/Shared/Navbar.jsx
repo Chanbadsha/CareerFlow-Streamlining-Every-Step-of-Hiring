@@ -6,6 +6,7 @@ import { ThemeSwitch } from "@/utils/ThemeSwitch";
 import { authClient } from "@/lib/auth-client";
 import { LayoutDashboard, LogOut } from "lucide-react";
 import Loading from "@/utils/Loading";
+import toast from "react-hot-toast";
 const navMenu = [
   { path: "/", label: "Home" },
   { path: "/jobs", label: "Browse Jobs" },
@@ -23,9 +24,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const { data: session, isPending, error, refetch } = authClient.useSession();
-  if (isPending) {
-    return <Loading></Loading>;
-  }
+
   const user = session?.user;
 
   return (
@@ -94,8 +93,8 @@ export default function Navbar() {
                 {open && (
                   <ul className="absolute right-0 top-12 z-50 w-52 overflow-hidden rounded-2xl border border-border bg-background/95 backdrop-blur-xl shadow-xl animate-in fade-in zoom-in-95 duration-200">
                     <li>
-                      <button
-                        type="button"
+                      <Link
+                        href="/dashboard"
                         className="flex w-full items-center gap-3 px-4 py-3 text-sm font-medium transition-colors hover:bg-muted"
                         onClick={() => {
                           setValue("userRole", "job-seeker");
@@ -104,15 +103,21 @@ export default function Navbar() {
                       >
                         <LayoutDashboard size={16} />
                         Dashboard
-                      </button>
+                      </Link>
                     </li>
 
                     <li>
                       <button
                         type="button"
                         className="flex w-full items-center gap-3 px-4 py-3 text-sm font-medium transition-colors hover:bg-muted text-danger"
-                        onClick={() => {
-                          setValue("userRole", "recruiter");
+                        onClick={async () => {
+                          await authClient.signOut({
+                            fetchOptions: {
+                              onSuccess: () => {
+                                toast.success("User successfully logout");
+                              },
+                            },
+                          });
                           setOpen(false);
                         }}
                       >

@@ -1,6 +1,6 @@
 "use client";
 
-import { signUp } from "@/lib/auth-client";
+import { authClient, signUp } from "@/lib/auth-client";
 import {
   Button,
   Input,
@@ -20,6 +20,8 @@ import { useForm, Controller } from "react-hook-form";
 const RegisterForm = () => {
   const [isSelected, setIsSelected] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
+
   const [authError, setAuthError] = useState("");
   const [user, setUser] = useState(null);
   const router = useRouter();
@@ -61,6 +63,16 @@ const RegisterForm = () => {
     }
   };
 
+  // Handle Google Login
+  const googleLogin = async () => {
+    setGoogleLoading(true);
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+    if (data) {
+      setGoogleLoading(false);
+    }
+  };
   return (
     <div className="">
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6 ">
@@ -273,9 +285,20 @@ const RegisterForm = () => {
         <div className="h-px flex-1 bg-border" />
       </div>
       {/* Google Login */}
-      <Button className="w-full" variant="tertiary">
-        <Icon icon="devicon:google" />
-        Sign in with Google
+      <Button onClick={googleLogin} className="w-full" variant="tertiary">
+        {googleLoading ? (
+          <>
+            {" "}
+            <Spinner color="current" size="sm" />
+            <span className="ml-2">Signing in...</span>
+          </>
+        ) : (
+          <>
+            {" "}
+            <Icon icon="devicon:google" />
+            Sign in with Google
+          </>
+        )}
       </Button>
     </div>
   );

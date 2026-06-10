@@ -2,6 +2,7 @@ import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProviders } from "@/Provider/ThemeProvider";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         <Analytics />
+        <Toaster />
         <ThemeProviders> {children}</ThemeProviders>
       </body>
     </html>
