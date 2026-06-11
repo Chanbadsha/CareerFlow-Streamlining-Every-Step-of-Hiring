@@ -64,7 +64,7 @@ const HomePageHero = () => {
           {/* Job Card */}
 
           <motion.div
-            className="lg:absolute mt-12 lg:mt-0 xl:-right-96 xl:top-60 -right-44 top-40 z-30 rounded-3xl border border-border/50 bg-white/80 p-6 shadow-2xl backdrop-blur-xl"
+            className="lg:absolute mt-12 lg:mt-0 xl:-right-96 xl:top-60 -right-44 top-40 z-30 rounded-3xl border border-border/50 bg-background/80 p-6 shadow-2xl backdrop-blur-xl"
             animate={{
               y: [0, -12, 0],
             }}
@@ -79,7 +79,7 @@ const HomePageHero = () => {
               <h6 className="text-lg font-bold text-foreground">Job Feed</h6>
 
               {/* Job 1 */}
-              <div className="mt-4 rounded-2xl border border-border bg-white px-5 py-4 shadow-sm transition hover:shadow-md">
+              <div className="mt-4 rounded-2xl border border-border bg-background px-5 py-4 shadow-sm transition hover:shadow-md">
                 <div className="flex items-start justify-between gap-6">
                   <div className="flex gap-3">
                     <div className="flex size-11 items-center justify-center rounded-xl bg-secondary/20 font-semibold text-secondary">
@@ -109,7 +109,7 @@ const HomePageHero = () => {
               </div>
 
               {/* Job 2 */}
-              <div className="mt-4 rounded-2xl border border-border bg-white px-5 py-4 shadow-sm transition hover:shadow-md">
+              <div className="mt-4 rounded-2xl border border-border bg-background px-5 py-4 shadow-sm transition hover:shadow-md">
                 <div className="flex gap-3">
                   <div className="flex size-11 items-center justify-center rounded-xl bg-indigo-100 font-semibold text-indigo-600">
                     S
@@ -125,7 +125,7 @@ const HomePageHero = () => {
               </div>
 
               {/* AI Info (STATIC — no motion) */}
-              <div className="absolute -top-12 -right-4 flex items-center gap-2 rounded-full border border-white/30 bg-white/70 px-4 py-2 shadow-lg backdrop-blur-xl">
+              <div className="absolute -top-12 -right-4 flex items-center gap-2 rounded-full border border-foreground/30 bg-background/70 px-4 py-2 shadow-lg backdrop-blur-xl">
                 <Sparkles className="h-4 w-4 text-indigo-500" />
 
                 <div className="flex items-center gap-2 text-xs font-medium">

@@ -1,0 +1,400 @@
+[
+    {
+        "_id": "64f1a2b3c9d1e2f3a4b5c601",
+        "title": "Frontend Developer (React)",
+        "slug": "frontend-developer-react-dhaka",
+        "description": "We are looking for a skilled Frontend Developer to build modern, responsive web applications using React.",
+        "shortDescription": "Build scalable React frontends for high-growth SaaS products.",
+        "responsibilities": "Develop UI components, optimize performance, collaborate with backend teams, write reusable code.",
+        "requirements": "Strong knowledge of React.js, JavaScript, HTML, CSS, REST APIs.",
+        "benefits": "Health insurance, flexible hours, remote options.",
+        "category": "Engineering",
+        "subCategory": "Frontend Development",
+        "tags": [
+            "react",
+            "frontend",
+            "javascript",
+            "remote"
+        ],
+        "type": "full-time",
+        "experienceLevel": "mid",
+        "salary": {
+            "min": 60000,
+            "max": 120000,
+            "currency": "USD",
+            "isNegotiable": true
+        },
+        "location": {
+            "country": "Bangladesh",
+            "city": "Dhaka",
+            "address": "Banani, Dhaka",
+            "postalCode": "1213"
+        },
+        "isRemote": true,
+        "remoteType": "hybrid",
+        "companyId": "64f1a2b3c9d1e2f3a4b5c701",
+        "recruiterId": "64f1a2b3c9d1e2f3a4b5c702",
+        "department": "Engineering",
+        "hiringTeam": [
+            "64f1a2b3c9d1e2f3a4b5c703"
+        ],
+        "applicantsCount": 42,
+        "maxApplicants": 200,
+        "applicationDeadline": "2026-08-15T00:00:00.000Z",
+        "applicationStartDate": "2026-06-01T00:00:00.000Z",
+        "status": "active",
+        "isFeatured": true,
+        "isUrgent": true,
+        "seo": {
+            "metaTitle": "Frontend Developer React Job in Dhaka",
+            "metaDescription": "Apply for a React Frontend Developer role in Dhaka with flexible hybrid work options.",
+            "keywords": [
+                "React job",
+                "frontend developer",
+                "Dhaka job"
+            ]
+        },
+        "viewsCount": 1200,
+        "clicksCount": 340,
+        "saveCount": 89,
+        "applicationMethod": "internal",
+        "requireCoverLetter": true,
+        "requiredDocuments": [
+            "resume",
+            "portfolio",
+            "github"
+        ],
+        "questions": [
+            {
+                "question": "How many years of React experience do you have?",
+                "required": true
+            }
+        ],
+        "aiScreeningEnabled": true,
+        "aiKeywordsMatch": [
+            "react",
+            "frontend",
+            "spa"
+        ],
+        "autoRejectRules": {
+            "minExperience": 2,
+            "requiredSkills": [
+                "react",
+                "javascript"
+            ]
+        },
+        "analytics": {
+            "impressions": 5000,
+            "views": 1200,
+            "uniqueViews": 900,
+            "applyClicks": 300,
+            "conversionRate": 25
+        },
+        "workflowStatus": "published",
+        "moderation": {
+            "reviewedBy": "64f1a2b3c9d1e2f3a4b5c900",
+            "reviewedAt": "2026-06-05T10:00:00.000Z"
+        },
+        "planType": "growth",
+        "isBoosted": true,
+        "boostExpiresAt": "2026-07-01T00:00:00.000Z",
+        "postedAt": "2026-06-01T00:00:00.000Z",
+        "updatedAt": "2026-06-10T12:00:00.000Z",
+        "publishedAt": "2026-06-02T00:00:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c9d1e2f3a4b5c602",
+        "title": "Backend Engineer (Node.js)",
+        "slug": "backend-engineer-nodejs-remote",
+        "description": "Join our backend team to build scalable APIs and microservices using Node.js and TypeScript.",
+        "shortDescription": "Design and build scalable backend systems using Node.js.",
+        "responsibilities": "Develop REST APIs, design databases, optimize performance, integrate third-party services.",
+        "requirements": "Node.js, Express, MongoDB, TypeScript, system design knowledge.",
+        "benefits": "Remote work, stock options, learning budget.",
+        "category": "Engineering",
+        "subCategory": "Backend Development",
+        "tags": [
+            "nodejs",
+            "backend",
+            "api",
+            "microservices"
+        ],
+        "type": "remote",
+        "experienceLevel": "senior",
+        "salary": {
+            "min": 90000,
+            "max": 160000,
+            "currency": "USD",
+            "isNegotiable": false
+        },
+        "location": {
+            "country": "Bangladesh",
+            "city": "Dhaka"
+        },
+        "isRemote": true,
+        "remoteType": "full-remote",
+        "companyId": "64f1a2b3c9d1e2f3a4b5c701",
+        "recruiterId": "64f1a2b3c9d1e2f3a4b5c702",
+        "department": "Engineering",
+        "hiringTeam": [],
+        "applicantsCount": 18,
+        "maxApplicants": 100,
+        "applicationDeadline": "2026-07-30T00:00:00.000Z",
+        "status": "active",
+        "isFeatured": false,
+        "isUrgent": false,
+        "seo": {
+            "metaTitle": "Remote Node.js Backend Engineer Job",
+            "metaDescription": "Apply for a remote backend engineer role using Node.js and TypeScript.",
+            "keywords": [
+                "Node.js job",
+                "backend engineer",
+                "remote developer"
+            ]
+        },
+        "viewsCount": 800,
+        "clicksCount": 210,
+        "saveCount": 55,
+        "applicationMethod": "internal",
+        "requireCoverLetter": false,
+        "requiredDocuments": [
+            "resume"
+        ],
+        "questions": [
+            {
+                "question": "Have you built scalable microservices before?",
+                "required": true
+            }
+        ],
+        "aiScreeningEnabled": true,
+        "aiKeywordsMatch": [
+            "nodejs",
+            "backend",
+            "microservices"
+        ],
+        "autoRejectRules": {
+            "minExperience": 4,
+            "requiredSkills": [
+                "nodejs",
+                "mongodb"
+            ]
+        },
+        "analytics": {
+            "impressions": 3200,
+            "views": 800,
+            "uniqueViews": 600,
+            "applyClicks": 180,
+            "conversionRate": 22.5
+        },
+        "workflowStatus": "published",
+        "moderation": {
+            "reviewedBy": "64f1a2b3c9d1e2f3a4b5c900",
+            "reviewedAt": "2026-06-03T09:30:00.000Z"
+        },
+        "planType": "free",
+        "isBoosted": false,
+        "postedAt": "2026-05-28T00:00:00.000Z",
+        "updatedAt": "2026-06-09T15:00:00.000Z",
+        "publishedAt": "2026-05-29T00:00:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c9d1e2f3a4b5c603",
+        "title": "UI/UX Designer",
+        "slug": "ui-ux-designer-product-design-remote",
+        "description": "We are looking for a creative UI/UX Designer to design user-friendly interfaces for our SaaS platform.",
+        "shortDescription": "Design clean and modern user experiences for web and mobile apps.",
+        "responsibilities": "Create wireframes, design UI mockups, conduct user research, collaborate with developers.",
+        "requirements": "Figma, Adobe XD, UX principles, prototyping, design systems knowledge.",
+        "benefits": "Remote flexibility, creative freedom, annual design budget.",
+        "category": "Design",
+        "subCategory": "UI/UX Design",
+        "tags": [
+            "ui",
+            "ux",
+            "figma",
+            "design",
+            "product"
+        ],
+        "type": "full-time",
+        "experienceLevel": "mid",
+        "salary": {
+            "min": 50000,
+            "max": 100000,
+            "currency": "USD",
+            "isNegotiable": true
+        },
+        "location": {
+            "country": "Bangladesh",
+            "city": "Dhaka"
+        },
+        "isRemote": true,
+        "remoteType": "hybrid",
+        "companyId": "64f1a2b3c9d1e2f3a4b5c701",
+        "recruiterId": "64f1a2b3c9d1e2f3a4b5c702",
+        "department": "Product",
+        "hiringTeam": [
+            "64f1a2b3c9d1e2f3a4b5c704"
+        ],
+        "applicantsCount": 27,
+        "maxApplicants": 150,
+        "applicationDeadline": "2026-08-10T00:00:00.000Z",
+        "status": "active",
+        "isFeatured": true,
+        "isUrgent": false,
+        "seo": {
+            "metaTitle": "UI UX Designer Job in Dhaka Remote",
+            "metaDescription": "Apply for a UI/UX Designer role working on modern SaaS product design.",
+            "keywords": [
+                "UI UX designer",
+                "product design job",
+                "Figma designer"
+            ]
+        },
+        "viewsCount": 1500,
+        "clicksCount": 420,
+        "saveCount": 110,
+        "applicationMethod": "internal",
+        "requireCoverLetter": true,
+        "requiredDocuments": [
+            "resume",
+            "portfolio"
+        ],
+        "questions": [
+            {
+                "question": "Can you share your portfolio link?",
+                "required": true
+            }
+        ],
+        "aiScreeningEnabled": true,
+        "aiKeywordsMatch": [
+            "ui",
+            "ux",
+            "figma",
+            "product design"
+        ],
+        "autoRejectRules": {
+            "minExperience": 2,
+            "requiredSkills": [
+                "figma",
+                "ux"
+            ]
+        },
+        "analytics": {
+            "impressions": 6000,
+            "views": 1500,
+            "uniqueViews": 1200,
+            "applyClicks": 380,
+            "conversionRate": 25.3
+        },
+        "workflowStatus": "published",
+        "moderation": {
+            "reviewedBy": "64f1a2b3c9d1e2f3a4b5c900",
+            "reviewedAt": "2026-06-06T11:00:00.000Z"
+        },
+        "planType": "growth",
+        "isBoosted": true,
+        "boostExpiresAt": "2026-07-10T00:00:00.000Z",
+        "postedAt": "2026-06-03T00:00:00.000Z",
+        "updatedAt": "2026-06-10T10:00:00.000Z",
+        "publishedAt": "2026-06-04T00:00:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c9d1e2f3a4b5c604",
+        "title": "DevOps Engineer",
+        "slug": "devops-engineer-aws-docker-kubernetes",
+        "description": "Join our infrastructure team to manage CI/CD pipelines, cloud infrastructure, and deployment automation.",
+        "shortDescription": "Build and maintain scalable cloud infrastructure and CI/CD pipelines.",
+        "responsibilities": "Manage AWS infrastructure, Docker containers, Kubernetes clusters, CI/CD pipelines.",
+        "requirements": "AWS, Docker, Kubernetes, CI/CD tools, Linux, scripting.",
+        "benefits": "Remote work, high-end tech stack, performance bonus.",
+        "category": "Engineering",
+        "subCategory": "DevOps",
+        "tags": [
+            "devops",
+            "aws",
+            "docker",
+            "kubernetes",
+            "ci/cd"
+        ],
+        "type": "contract",
+        "experienceLevel": "senior",
+        "salary": {
+            "min": 100000,
+            "max": 180000,
+            "currency": "USD",
+            "isNegotiable": false
+        },
+        "location": {
+            "country": "Bangladesh",
+            "city": "Dhaka"
+        },
+        "isRemote": true,
+        "remoteType": "full-remote",
+        "companyId": "64f1a2b3c9d1e2f3a4b5c701",
+        "recruiterId": "64f1a2b3c9d1e2f3a4b5c702",
+        "department": "Infrastructure",
+        "hiringTeam": [],
+        "applicantsCount": 12,
+        "maxApplicants": 80,
+        "applicationDeadline": "2026-07-25T00:00:00.000Z",
+        "status": "active",
+        "isFeatured": false,
+        "isUrgent": true,
+        "seo": {
+            "metaTitle": "DevOps Engineer AWS Kubernetes Remote Job",
+            "metaDescription": "Apply for a DevOps Engineer role working with AWS, Docker, and Kubernetes.",
+            "keywords": [
+                "DevOps job",
+                "AWS engineer",
+                "Kubernetes developer"
+            ]
+        },
+        "viewsCount": 950,
+        "clicksCount": 260,
+        "saveCount": 70,
+        "applicationMethod": "internal",
+        "requireCoverLetter": false,
+        "requiredDocuments": [
+            "resume",
+            "github"
+        ],
+        "questions": [
+            {
+                "question": "Have you managed production Kubernetes clusters?",
+                "required": true
+            }
+        ],
+        "aiScreeningEnabled": true,
+        "aiKeywordsMatch": [
+            "aws",
+            "docker",
+            "kubernetes",
+            "devops"
+        ],
+        "autoRejectRules": {
+            "minExperience": 5,
+            "requiredSkills": [
+                "aws",
+                "kubernetes"
+            ]
+        },
+        "analytics": {
+            "impressions": 4000,
+            "views": 950,
+            "uniqueViews": 700,
+            "applyClicks": 200,
+            "conversionRate": 21.0
+        },
+        "workflowStatus": "published",
+        "moderation": {
+            "reviewedBy": "64f1a2b3c9d1e2f3a4b5c900",
+            "reviewedAt": "2026-06-07T08:00:00.000Z"
+        },
+        "planType": "enterprise",
+        "isBoosted": true,
+        "boostExpiresAt": "2026-08-01T00:00:00.000Z",
+        "postedAt": "2026-06-02T00:00:00.000Z",
+        "updatedAt": "2026-06-11T09:00:00.000Z",
+        "publishedAt": "2026-06-03T00:00:00.000Z"
+    }
+]
